@@ -54,7 +54,7 @@ class FoodMainController extends Controller
     }
 
     function edit($id){
-        $dataMenu = foodMain::find($id);
+        $dataMenu = foodMain::find($id); // cari the specific id needed
         return view('editMenu', compact('dataMenu'));
     }
 
@@ -86,16 +86,9 @@ class FoodMainController extends Controller
     }
 
     function delete($id){
-        $dataMenu = foodMain::find($id);
-        foodMain::destroy($id);
+        $dataMenu = foodMain::find($id); // store the ID
+        foodMain::destroy($id); // destroy the ID
         Storage::delete('/public'.'/'.$dataMenu->FotoFoodMain);
         return redirect('/add-menu');
-    }
-
-    function search(Request $request){
-        $query = $request->input('query');
-        $foodMenu = FoodMain::where('NamaFoodMain', 'like', '%'. $query . '%')->get();
-
-        return view ('welcome', compact('results'));
     }
 }

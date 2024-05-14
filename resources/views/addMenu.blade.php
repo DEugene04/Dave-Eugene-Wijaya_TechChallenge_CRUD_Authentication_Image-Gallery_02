@@ -14,7 +14,7 @@
             <h1>Admin Dashboard</h1>
         </div>
         <hr>
-
+        <a href="/"><h3>Home</h3></a>
       <!-- Table HTML -->
         <div class="tableContainer">
             <table>
@@ -35,7 +35,7 @@
                         <td>{{ $m->IDFoodMain }}</td>
                         <td>{{ $m->NamaFoodMain }}</td>
                         <td>{{ $m->JenisFoodMain }}</td>
-                        <td>{{ $m->HargaOriFoodMain }}</td>
+                        <td>{{ number_format($m->HargaOriFoodMain) }}</td>
                         <td>{{ $m->QuantityFoodMain }}</td>
                         <td><a href="/edit-menu/{{ $m->id }}"><button class="editBtn">Edit</button></a></td>
                         <td><form action="/delete-menu/{{ $m->id }}" method="POST">
@@ -101,7 +101,7 @@
                 {{-- Input Harga field --}}
                 <div id="HargaContainer" class="contentContainer">
                     <label for="HargaOriFoodMain">Harga</label>
-                    <input id="HargaOriFoodMain" type="text" value="{{ old('HargaOriFoodMain') }}" name="HargaOriFoodMain">
+                    <input id="HargaOriFoodMain" type="number" value="{{ old('HargaOriFoodMain') }}" name="HargaOriFoodMain">
                     @error('HargaOriFoodMain')
                         <p class="error-message">{{ $message }}</p>
                     @enderror
@@ -144,6 +144,7 @@
             </div>
         </form>
 
+        <div class="darkOverlay"></div>
         <!-- link to javascript -->
         <script src="admin.js"></script>
     </div>

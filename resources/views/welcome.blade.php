@@ -23,10 +23,10 @@
               <img src="/assets/Logo Ecobite.png" alt="">
           </div>
           <div class="navLinks">
-              <a href=""><b>Home</b></a>
-              <a href="">Cart</a>
-              <a href="">Location</a>
-              <a href=""><button>Login</button></a>
+              <a href="/"><b>Home</b></a>
+              <a href="/add-menu">Dashboard</a>
+              <a href="register">Register</a>
+              <a href="login"><button>Login</button></a>
           </div>
       </nav>
 
@@ -47,13 +47,6 @@
               <h1 id="Food">Food</h1>
               <h1 id="Drinks">Drinks</h1>
           </div>
-          <div class="searchContainer">
-              <img src="/assets/Filter icon.png" alt="">
-              <form class="searchBar" action="{{ route('search') }}" method="GET">
-                <input type="text" name="query" placeholder="Type Here....">
-                <button type="submit">Search</button>
-              </form>
-          </div>
       </div>
 
       <!-- Main course HTML -->
@@ -70,8 +63,8 @@
                     </div>
                     <div class="keterangan">
                         <h1 class="foodTitle">{{ $m->NamaFoodMain }}</h1>
-                        <h2 class="originalPrice"><del>{{ $m->HargaOriFoodMain }}</del></h2>
-                        <h2 class="discountPrice">Rp. {{ ($m->HargaOriFoodMain)/2 }}</h2>
+                        <h2 class="originalPrice"><del>Rp. {{ number_format($m->HargaOriFoodMain) }}</del></h2>
+                        <h2 class="discountPrice">Rp. {{ number_format(($m->HargaOriFoodMain)/2) }}</h2>
                         <div class="buttonContainer">
                             <button class="addButton">Add</button>
                         </div>
@@ -92,8 +85,8 @@
                     </div>
                     <div class="keterangan">
                         <h1 class="drinkTitle">{{ $d->NamaFoodMain }}</h1>
-                        <h2 class="originalPrice"><del>{{ $d->HargaOriFoodMain }}</del></h2>
-                        <h2 class="discountPrice">Rp. {{ ($d->HargaOriFoodMain)/2 }}</h2>
+                        <h2 class="originalPrice"><del>Rp. {{ number_format($d->HargaOriFoodMain) }}</del></h2>
+                        <h2 class="discountPrice">Rp. {{ number_format(($d->HargaOriFoodMain)/2) }}</h2>
                         <div class="buttonContainer">
                             <button class="addButton">Add</button>
                         </div>
@@ -118,8 +111,8 @@
                     </div>
                     <div class="keterangan">
                         <h1 class="foodTitle">{{ $s->NamaFoodMain }}</h1>
-                        <h2 class="originalPrice"><del>{{ $s->HargaOriFoodMain }}</del></h2>
-                        <h2 class="discountPrice">Rp. {{ ($d->HargaOriFoodMain)/2 }}</h2>
+                        <h2 class="originalPrice"><del>Rp. {{ number_format($s->HargaOriFoodMain) }}</del></h2>
+                        <h2 class="discountPrice">Rp. {{ number_format(($s->HargaOriFoodMain)/2) }}</h2>
                         <div class="buttonContainer">
                             <button class="addButton">Add</button>
                         </div>

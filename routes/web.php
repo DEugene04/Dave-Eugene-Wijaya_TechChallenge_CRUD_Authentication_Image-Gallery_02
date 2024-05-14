@@ -17,7 +17,3 @@ Route::get('/edit-menu/{id}', [FoodMainController::class, 'edit']); // untuk edi
 Route::patch('/update-menu/{id}', [FoodMainController::class, 'update']); // untuk update datanya
 
 Route::delete('/delete-menu/{id}', [FoodMainController::class, 'delete']); // Delete file di DB
-
-Route::get('/search', [FoodMainController::class, 'search'])->name('search'); // route untuk search bar
-
-
