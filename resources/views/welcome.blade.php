@@ -22,12 +22,23 @@
           <div class="logoEcobite">
               <img src="/assets/Logo Ecobite.png" alt="">
           </div>
-          <div class="navLinks">
-              <a href="/"><b>Home</b></a>
-              <a href="/add-menu">Dashboard</a>
-              <a href="register">Register</a>
-              <a href="login"><button>Login</button></a>
-          </div>
+          
+          @if (Auth()->user())
+            <div class="navLinks">
+                <a href="/"><b>Home</b></a>
+                <a href="/add-menu">Dashboard</a>
+                <a href="register">Cart</a>
+                <a href="login"><button>{{ Auth::user()->name }}</button></a>
+            </div>
+          @else
+            <div class="navLinks">
+                <a href="/"><b>Home</b></a>
+                <a href="/add-menu">Dashboard</a>
+                <a href="register">Register</a>
+                <a href="login"><button>Login</button></a>
+            </div>
+          @endif
+          
       </nav>
 
       <!-- Landing page HTML -->
