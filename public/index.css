@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.navbarContainer{
+    padding: 1vw 2vw 0vw 0vw;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: white;
+    z-index: 2;
+}
+
+.navbarWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logoContainer img{
+    height: 6vw;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    margin-left: 2vw;
+}
+
+/* Landing Page CSS */
+
+.landingPage img{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.landingPageText{
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.507);
+    padding: 2vw;
+}
+.landingPageText h4{
+    font-size: 3vw;
+}
+.landingPageText h2{
+    font-size: 5vw;
+}
+
+/* Gallery CSS */
+.contentContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1C2530;
+    position: relative;
+    overflow: hidden;
+}
+
+.contentWrapper{
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    border-radius: 2vw;
+    padding: 3vw;
+    gap: 2vw;
+}
+
+.top{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.photoGallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    z-index: 5;
+}
+
+.photoGallery img{
+    height: 12vw;
+    width: 12vw;
+    object-fit: cover;
+    /* Bikin semua foto same height tapi resolutionya ga hancur */
+}
+
+.galleryContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+    position: relative;
+}
+
+.galleryContent p{
+    color: white;
+    font-size: 2vw;
+}
+
+#deleteBtn{
+    display: none;
+}
+
+.deleteImg{
+    position: absolute;
+    top: -1vw;
+    left: -1vw;
+    transition: transform 0.1s ease-in;
+}
+
+.deleteImg:hover{
+    cursor: pointer;
+    transform: scale(.9);
+}
+
+.deleteImg img{
+    width: 2.5vw;
+    height: 2.5vw;
+}
+
+/* pop up CSS box */
+.popUpContainer{
+    background-color: rgb(23, 65, 51);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2vw;
+    padding: 3vw;
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    gap: 2vw;
+    z-index: 6;
+}
+
+.popUpContainer h4{
+    color: white;
+}
+
+#uploadFile{
+    width: 4vw;
+    height: 4vw;
+    transition: transform 0.3s ease;
+}
+
+#uploadFile:hover{
+    cursor: pointer;
+    transform: scale(.9);
+}
+
+#nameLabel{
+    color: white;
+}
+
+#inputName{
+    padding: .5vw 1vw;
+}
+
+.uploadBtn{
+    background-color: transparent;
+    outline: none;
+    border: 2px solid white;
+    color: white;
+    padding: .5vw 2vw;
+    transition: color 0.3s ease-in, background-color 0.3s ease-in;
+}
+
+.uploadBtn:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: rgb(23, 65, 51);
+}
+
+.moveUp{
+    animation: moveUp 0.5s;
+}
+
+/* animation untuk pop up boxnya */
+@keyframes moveUp{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* hide input choose filenya */
+#foto{
+    display: none;
+}
+
+/* overlay CSS */
+.darkOverlay{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    display: none;
+}
+
+/* Styling buttonya untuk add image */
+#addImage{
+    border: 2px solid white;
+    color: white;
+    width: fit-content;
+    padding: 1vw 2vw;
+    outline: none;
+    border-radius: .5vw;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in, color 0.5s ease-in, border 0.3s ease-in;
+    font-weight: 600;
+    position: fixed;
+    bottom: 2vw;
+    right: 2vw;
+    z-index: 5;
+}
+
+#addImage:hover{
+    cursor: pointer;
+    background-color: rgb(23, 65, 51);
+    color: white;
+    border: none;
+}
+
+/* Spotlight CSS */
+.spotlight1{
+    position: absolute;
+    top: 0vw;
+    left: -3vw;
+}
+.spotlight1 img, .spotlight2 img{
+    width: 80vw;
+    height: 50vw;
+    opacity: .4;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+.spotlight2{
+    position: absolute;
+    transform: scaleX(-1);
+    top: 0vw;
+    right: -3vw;
+}
