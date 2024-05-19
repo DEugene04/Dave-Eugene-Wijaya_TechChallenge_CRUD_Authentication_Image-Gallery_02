@@ -27,11 +27,3 @@ inputImage.addEventListener("click", function(e){
     e.preventDefault()
     inputFile.click()
 })
-
-// Delete image JS
-let deleteImg = document.getElementById("deleteImg")
-let deleteBtn = document.getElementById("deleteBtn")
-
-deleteImg.addEventListener("click", function(){
-    deleteBtn.click();
-})

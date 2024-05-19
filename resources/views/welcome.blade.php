@@ -67,8 +67,7 @@
                     <form action="/delete-foto/{{ $f->id }}" method="POST">
                     @csrf
                     @method('delete')
-                    <button type="submit" id="deleteBtn">Delete</button>
-                    <div class="deleteImg"><img src="/assets/delete.png" alt="delete" id="deleteImg"></div>
+                    <button type="submit" id="deleteBtn"><div class="deleteImg"><img src="/assets/delete.png" alt="delete" id="deleteImg"></div></button>
                     </form>
                 </div>
                 @empty

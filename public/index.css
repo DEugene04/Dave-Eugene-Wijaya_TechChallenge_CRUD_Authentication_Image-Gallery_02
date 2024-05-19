@@ -31,12 +31,20 @@ body{
 
 .logoContainer img{
     height: 6vw;
+    -webkit-filter: invert(100%);
 }
 
 a{
     color: white;
     text-decoration: none;
     margin-left: 2vw;
+    font-size: 1.5vw;
+    transition: opacity 0.2s ease;
+}
+
+a:hover{
+    cursor: pointer;
+    opacity: .8;
 }
 
 /* Landing Page CSS */
@@ -124,7 +132,7 @@ a{
 }
 
 #deleteBtn{
-    display: none;
+    border: none;
 }
 
 .deleteImg{
